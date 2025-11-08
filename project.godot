@@ -23,6 +23,11 @@ buses/default_bus_layout="res://addons/escoria-core/buses/default_bus_layout.tre
 
 escoria="*res://addons/escoria-core/game/esc_autoload.gd"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/escoria-core/plugin.cfg", "res://addons/escoria-dialog-simple/plugin.cfg", "res://addons/escoria-ui-keyboard-9verbs/plugin.cfg", "res://addons/escoria-ui-simplemouse-main/addons/escoria-ui-simplemouse/plugin.cfg", "res://addons/escoria-wizard/plugin.cfg")
@@ -31,7 +36,7 @@ enabled=PackedStringArray("res://addons/escoria-core/plugin.cfg", "res://addons/
 
 main/command_directories=["res://addons/escoria-core/game/core-scripts/esc/commands"]
 main/game_version=""
-main/game_start_script=""
+main/game_start_script="res://game.esc"
 main/action_default_script=""
 main/force_quit=true
 main/text_lang="en"
@@ -53,7 +58,7 @@ debug/enable_hover_stack_viewer=false
 debug/perform_script_analysis_at_runtime=true
 ui/default_dialog_type="floating"
 ui/game_scene="res://addons/escoria-ui-keyboard-9verbs/game.tscn"
-ui/inventory_items_path="res://game/items/inventory/"
+ui/inventory_items_path="res://inventory/"
 ui/default_transition="curtain"
 ui/transition_paths=["res://addons/escoria-core/game/scenes/transitions/shaders/"]
 ui/inventory_item_size=Vector2(72, 72)

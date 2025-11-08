@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://dixtwpvgyuf1j"]
+
+[ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_uaver"]
+[ext_resource type="PackedScene" uid="uid://cctt1bbybiw66" path="res://characters/graham/graham.tscn" id="2_62622"]
+[ext_resource type="Texture2D" uid="uid://6xi1sunwaymc" path="res://rooms/pub/pub_bg.png" id="2_sewhf"]
+[ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="3_6resm"]
+[ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="4_74wau"]
+[ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="5_62622"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_wot2k"]
+vertices = PackedVector2Array(1404.4531, 811.60156, 175.89844, 884.21875, 279.90625, 455.77344, 1382.5625, 423.28125)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(272, 446, 1392, 413, 1415, 821, 163, 895)])
+
+[node name="Pub" type="Node2D"]
+script = ExtResource("1_uaver")
+global_id = "pub"
+player_scene = ExtResource("2_62622")
+camera_limits = [Rect2(0, 0, 3976, 956)]
+editor_debug_mode = 1
+metadata/_custom_type_script = "uid://c7fcpp72w3dnj"
+
+[node name="escbackground" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("2_sewhf")
+script = ExtResource("3_6resm")
+metadata/_custom_type_script = "uid://fnwnfflaoeqp"
+
+[node name="ESCTerrain" type="Node2D" parent="."]
+script = ExtResource("4_74wau")
+metadata/_custom_type_script = "uid://5pbcieq7gpdo"
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="ESCTerrain"]
+navigation_polygon = SubResource("NavigationPolygon_wot2k")
+
+[node name="start" type="Marker2D" parent="."]
+position = Vector2(808, 636)
+script = ExtResource("5_62622")
+global_id = "start"
+is_start_location = true
+metadata/_custom_type_script = "uid://beh3ds4eapldu"
