@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dixtwpvgyuf1j"]
+[gd_scene load_steps=9 format=3 uid="uid://dixtwpvgyuf1j"]
 
 [ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_uaver"]
 [ext_resource type="PackedScene" uid="uid://cctt1bbybiw66" path="res://characters/graham/graham.tscn" id="2_62622"]
@@ -6,11 +6,12 @@
 [ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="3_6resm"]
 [ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="4_74wau"]
 [ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="5_62622"]
+[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="7_wot2k"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wot2k"]
-vertices = PackedVector2Array(2777.3203, 903.89844, 175.6875, 885.09375, 279.8828, 455.90625, 2665.1094, 431.07813)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(272, 446, 2673, 421, 2790, 914, 163, 895)])
+vertices = PackedVector2Array(1473.5781, 767.1797, 1668.1719, 737.6094, 1671.1719, 934.5469, 895.96875, 860.1719, 338.5078, 820.4375, 338.5078, 820.4297, 63.070313, 988.96875, 81, 812.28906, 2738, 739.4375, 3286.8516, 793.4375, 3393.8516, 982.03125, 2697.9922, 783.3672, 1213.1719, 705.5469)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 3), PackedInt32Array(6, 7, 4, 3, 2), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(3, 12, 0), PackedInt32Array(2, 11, 10), PackedInt32Array(2, 10, 6)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(72, 802, 338.83008, 810.43616, 894, 850, 1212, 695, 1474, 757, 1678, 726, 1681, 923, 2693, 774, 2734, 729, 3293, 784, 3411, 992, 52, 999)])
 
 [node name="Pub" type="Node2D"]
 script = ExtResource("1_uaver")
@@ -21,15 +22,19 @@ editor_debug_mode = 1
 metadata/_custom_type_script = "uid://c7fcpp72w3dnj"
 
 [node name="escbackground" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 3.0
+offset_top = -7.0
+offset_right = 3979.0
+offset_bottom = 949.0
 mouse_filter = 2
 texture = ExtResource("2_sewhf")
 script = ExtResource("3_6resm")
 metadata/_custom_type_script = "uid://fnwnfflaoeqp"
+metadata/_edit_lock_ = true
 
 [node name="ESCTerrain" type="Node2D" parent="."]
 script = ExtResource("4_74wau")
+scale_max = 2.0
 metadata/_custom_type_script = "uid://5pbcieq7gpdo"
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="ESCTerrain"]
@@ -37,8 +42,19 @@ position = Vector2(20, -46)
 navigation_polygon = SubResource("NavigationPolygon_wot2k")
 
 [node name="start" type="Marker2D" parent="."]
-position = Vector2(808, 636)
+position = Vector2(263, 860)
 script = ExtResource("5_62622")
 global_id = "start"
 is_start_location = true
 metadata/_custom_type_script = "uid://beh3ds4eapldu"
+
+[node name="Blackboard" type="Area2D" parent="."]
+process_mode = 1
+visible = false
+script = ExtResource("7_wot2k")
+global_id = "blackboard"
+combine_when_selected_action_is_in = PackedStringArray()
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Blackboard"]
+polygon = PackedVector2Array(1041, 102, 1171, 111, 1171, 363, 1036, 359)
