@@ -21,3 +21,5 @@ When defining start script it was not reading init.
 I copy it from simple project. I restarted GODOT. It worked...
 
 To get plugin to work. Copied from example project. Restart GODOT. 
+
+In order to menu to work klick to "play" but "movie play"

@@ -9,9 +9,9 @@
 [ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="7_wot2k"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wot2k"]
-vertices = PackedVector2Array(1473.5781, 767.1797, 1668.1719, 737.6094, 1671.1719, 934.5469, 895.96875, 860.1719, 338.5078, 820.4375, 338.5078, 820.4297, 63.070313, 988.96875, 81, 812.28906, 2738, 739.4375, 3286.8516, 793.4375, 3393.8516, 982.03125, 2697.9922, 783.3672, 1213.1719, 705.5469)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 3), PackedInt32Array(6, 7, 4, 3, 2), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(3, 12, 0), PackedInt32Array(2, 11, 10), PackedInt32Array(2, 10, 6)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(72, 802, 338.83008, 810.43616, 894, 850, 1212, 695, 1474, 757, 1678, 726, 1681, 923, 2693, 774, 2734, 729, 3293, 784, 3411, 992, 52, 999)])
+vertices = PackedVector2Array(1486.1172, 757.02344, 1175.3203, 301.3203, 1225.25, 235.84375, 1668.9375, 649.2969, 1668, 726.0078, 1671.1719, 934.5469, 1478.3594, 768.3125, 338.5078, 820.4375, 338.5078, 820.4297, 895.96875, 860.1719, 63.070313, 988.96875, 81, 812.28906, 2738, 739.4375, 3286.8516, 793.4375, 3393.8516, 982.03125, 2697.9922, 783.3672, 1213.1719, 705.5469)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(0, 4, 5, 6), PackedInt32Array(7, 8, 9), PackedInt32Array(10, 11, 7, 9, 5), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(9, 16, 6, 5), PackedInt32Array(5, 15, 14), PackedInt32Array(5, 14, 10)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(72, 802, 338.83008, 810.43616, 894, 850, 1212, 695, 1474, 757, 1163, 301, 1224, 221, 1679, 645, 1678, 726, 1681, 923, 2693, 774, 2734, 729, 3293, 784, 3411, 992, 52, 999)])
 
 [node name="Pub" type="Node2D"]
 script = ExtResource("1_uaver")
@@ -50,7 +50,6 @@ metadata/_custom_type_script = "uid://beh3ds4eapldu"
 
 [node name="Blackboard" type="Area2D" parent="."]
 process_mode = 1
-visible = false
 script = ExtResource("7_wot2k")
 global_id = "blackboard"
 combine_when_selected_action_is_in = PackedStringArray()
