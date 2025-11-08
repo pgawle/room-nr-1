@@ -8,9 +8,9 @@
 [ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="5_62622"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wot2k"]
-vertices = PackedVector2Array(1404.4531, 811.60156, 175.89844, 884.21875, 279.90625, 455.77344, 1382.5625, 423.28125)
+vertices = PackedVector2Array(2777.3203, 903.89844, 175.6875, 885.09375, 279.8828, 455.90625, 2665.1094, 431.07813)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(272, 446, 1392, 413, 1415, 821, 163, 895)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(272, 446, 2673, 421, 2790, 914, 163, 895)])
 
 [node name="Pub" type="Node2D"]
 script = ExtResource("1_uaver")
@@ -33,6 +33,7 @@ script = ExtResource("4_74wau")
 metadata/_custom_type_script = "uid://5pbcieq7gpdo"
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="ESCTerrain"]
+position = Vector2(20, -46)
 navigation_polygon = SubResource("NavigationPolygon_wot2k")
 
 [node name="start" type="Marker2D" parent="."]
