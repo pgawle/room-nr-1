@@ -28,6 +28,10 @@ escoria="*res://addons/escoria-core/game/esc_autoload.gd"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 
+[dotnet]
+
+project/assembly_name="Room Nr 1"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/escoria-core/plugin.cfg", "res://addons/escoria-dialog-simple/plugin.cfg", "res://addons/escoria-ui-simplemouse-main/addons/escoria-ui-simplemouse/plugin.cfg", "res://addons/escoria-ui-simplemouse/plugin.cfg", "res://addons/escoria-wizard/plugin.cfg")

@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://b6axt88ea7bf8"]
+
+[ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_57cs5"]
+[ext_resource type="PackedScene" uid="uid://c5pfe15bv4wr2" path="res://characters/dziadek/Dziadek.scn" id="2_mjav8"]
+[ext_resource type="Texture2D" uid="uid://dlhry43id8m0y" path="res://rooms/ulica/ulica-background.png" id="2_qd7lf"]
+[ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="3_uik87"]
+[ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="4_mjav8"]
+[ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="5_uik87"]
+[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="7_el5fg"]
+[ext_resource type="Texture2D" uid="uid://cpytg42jd8qu1" path="res://rooms/ulica/drzewo.png" id="8_47dp5"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_mypmt"]
+vertices = PackedVector2Array(1271.8203, 674.96094, 7.6328125, 671.03125, 13.3984375, 578, 1270.1719, 578)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(4, 568, 1280, 568, 1282, 685, -3, 681)])
+
+[node name="Ulica" type="Node2D"]
+script = ExtResource("1_57cs5")
+global_id = "ulica"
+esc_script = "res://rooms/ulica/ulica.esc"
+player_scene = ExtResource("2_mjav8")
+metadata/_custom_type_script = "uid://c7fcpp72w3dnj"
+
+[node name="escbackground" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("2_qd7lf")
+stretch_mode = 2
+script = ExtResource("3_uik87")
+metadata/_custom_type_script = "uid://fnwnfflaoeqp"
+
+[node name="ESCTerrain" type="Node2D" parent="."]
+script = ExtResource("4_mjav8")
+metadata/_custom_type_script = "uid://5pbcieq7gpdo"
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="ESCTerrain"]
+navigation_polygon = SubResource("NavigationPolygon_mypmt")
+
+[node name="ESCLocation" type="Marker2D" parent="."]
+position = Vector2(116, 621)
+script = ExtResource("5_uik87")
+global_id = "ulica_start"
+is_start_location = true
+metadata/_custom_type_script = "uid://beh3ds4eapldu"
+
+[node name="Drzewo" type="Area2D" parent="."]
+process_mode = 1
+script = ExtResource("7_el5fg")
+global_id = "drzewo"
+esc_script = "res://rooms/ulica/drzewo.esc"
+tooltip_name = "Drzewo"
+combine_when_selected_action_is_in = PackedStringArray()
+hover_enabled = true
+inventory_texture = ExtResource("8_47dp5")
+inventory_texture_hovered = ExtResource("8_47dp5")
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="Sprite2D" type="Sprite2D" parent="Drzewo"]
+position = Vector2(627, 275)
+texture = ExtResource("8_47dp5")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Drzewo"]
+polygon = PackedVector2Array(594, 530, 646, 513, 642, 461, 608, 348, 591, 263, 564, 265, 555, 279, 525, 274, 500, 270, 469, 274, 410, 242, 391, 217, 341, 205, 307, 180, 293, 119, 321, 96, 313, 79, 290, 77, 275, 49, 282, 20, 302, 4, 343, -3, 690, 1, 706, 20, 732, 10, 768, 13, 787, 29, 789, 49, 789, 66, 828, 73, 851, 86, 865, 111, 922, 130, 952, 144, 977, 178, 979, 213, 959, 240, 931, 252, 779, 304, 738, 313, 667, 300, 633, 277, 653, 375, 669, 424, 697, 470, 722, 495, 750, 518, 793, 525, 704, 538, 662, 545)
+
+[node name="ESCLocation" type="Marker2D" parent="Drzewo"]
+position = Vector2(636, 193)
+script = ExtResource("5_uik87")
+global_id = "drzewo_loc"
+metadata/_custom_type_script = "uid://beh3ds4eapldu"
