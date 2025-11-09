@@ -25,8 +25,9 @@ escoria="*res://addons/escoria-core/game/esc_autoload.gd"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=1280
+window/size/viewport_height=900
+window/stretch/mode="canvas_items"
 
 [dotnet]
 
@@ -34,12 +35,12 @@ project/assembly_name="Room Nr 1"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/escoria-core/plugin.cfg", "res://addons/escoria-dialog-simple/plugin.cfg", "res://addons/escoria-ui-simplemouse-main/addons/escoria-ui-simplemouse/plugin.cfg", "res://addons/escoria-ui-simplemouse/plugin.cfg", "res://addons/escoria-wizard/plugin.cfg")
+enabled=PackedStringArray("res://addons/escoria-core/plugin.cfg", "res://addons/escoria-dialog-simple/plugin.cfg", "res://addons/escoria-ui-simplemouse/plugin.cfg", "res://addons/escoria-wizard/plugin.cfg")
 
 [escoria]
 
 main/command_directories=["res://addons/escoria-core/game/core-scripts/esc/commands"]
-main/game_version=""
+main/game_version="0.1"
 main/game_start_script="res://game.esc"
 main/action_default_script=""
 main/force_quit=true
@@ -87,5 +88,4 @@ wizard/path_to_rooms="res://rooms"
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+textures/canvas_textures/default_texture_filter=0

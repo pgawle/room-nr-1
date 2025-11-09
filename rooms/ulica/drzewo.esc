@@ -1,5 +1,5 @@
 :look
-	say($player, "Przepiękne drzewo. Przypomnina mi wieś na której się wychowałem.")
+	say("dziadek", "Przepiękne drzewo. Przypomnina mi wieś na której się wychowałem.")
 
 :use
-	say($player, "Drzewa się nie używa, drzewa się podziwia.")	
+	say("dziadek", "Drzewa się nie używa, drzewa się podziwia.")

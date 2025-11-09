@@ -1,0 +1,2 @@
+:look
+	say("dziadek", "It's me!")

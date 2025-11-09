@@ -19,6 +19,7 @@ script = ExtResource("1_57cs5")
 global_id = "ulica"
 esc_script = "res://rooms/ulica/ulica.esc"
 player_scene = ExtResource("2_mjav8")
+camera_limits = []
 metadata/_custom_type_script = "uid://c7fcpp72w3dnj"
 
 [node name="escbackground" type="TextureRect" parent="."]
@@ -50,6 +51,7 @@ script = ExtResource("7_el5fg")
 global_id = "drzewo"
 esc_script = "res://rooms/ulica/drzewo.esc"
 tooltip_name = "Drzewo"
+default_action = "look"
 combine_when_selected_action_is_in = PackedStringArray()
 hover_enabled = true
 inventory_texture = ExtResource("8_47dp5")
