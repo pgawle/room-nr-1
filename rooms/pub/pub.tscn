@@ -52,6 +52,7 @@ metadata/_custom_type_script = "uid://beh3ds4eapldu"
 process_mode = 1
 script = ExtResource("7_wot2k")
 global_id = "blackboard"
+tooltip_name = "Tablica"
 combine_when_selected_action_is_in = PackedStringArray()
 metadata/_custom_type_script = "uid://dshelmw7y44qg"
 
