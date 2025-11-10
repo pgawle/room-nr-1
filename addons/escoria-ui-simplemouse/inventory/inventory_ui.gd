@@ -16,7 +16,7 @@ var being_opened: bool
 # Height of the title part of the inventory that stays visible when inventory
 # is hidden. To be computed depending on the resolution of the game, hardcoded
 # here for demonstration purpose.
-const _inventory_title_height: int = 34
+const _inventory_title_height: int = 14
 
 func _ready() -> void:
 	super._ready()
@@ -32,7 +32,7 @@ func show_inventory():
 	_tween.stop()
 	_tween.reset()
 	var start_pos_y = inventory_scene.position.y
-	var end_pos_y = get_viewport_rect().size.y - inventory_scene.size.y
+	var end_pos_y = get_viewport_rect().size.y - (inventory_scene.size.y /2)
 	_tween.interpolate_property(
 		inventory_scene,
 		"position:y",

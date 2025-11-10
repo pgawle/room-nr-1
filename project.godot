@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Room Nr 1"
+config/name="DebugIsland"
+config/version="0.1"
 run/main_scene="res://addons/escoria-core/game/main_scene.tscn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -25,8 +26,10 @@ escoria="*res://addons/escoria-core/game/esc_autoload.gd"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=900
+window/size/viewport_width=640
+window/size/viewport_height=320
+window/size/window_width_override=1280
+window/size/window_height_override=640
 window/stretch/mode="canvas_items"
 
 [dotnet]
@@ -66,7 +69,7 @@ ui/game_scene="res://addons/escoria-ui-simplemouse/game.tscn"
 ui/inventory_items_path="res://inventory/"
 ui/default_transition="curtain"
 ui/transition_paths=["res://addons/escoria-core/game/scenes/transitions/shaders/"]
-ui/inventory_item_size=Vector2(72, 72)
+ui/inventory_item_size=Vector2(32, 32)
 ui/dialog_managers=["res://addons/escoria-dialog-simple/esc_dialog_simple.gd"]
 sound/master_volume=1
 sound/music_volume=1
