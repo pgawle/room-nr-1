@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://0qms6fx5siad" path="res://addons/escoria-ui-simplemouse/verbs_mouseicons.tscn" id="4"]
 [ext_resource type="Script" uid="uid://dqrptsg8qv2o7" path="res://addons/escoria-ui-simplemouse/game.gd" id="5"]
 [ext_resource type="PackedScene" uid="uid://b3hru28v8y36i" path="res://addons/escoria-ui-simplemouse/tooltip/target_tooltip.tscn" id="6"]
+[ext_resource type="FontFile" uid="uid://dr8tfhwpuxu4b" path="res://addons/escoria-ui-simplemouse/fonts/lucasarts-scumm-solid.otf" id="6_k6xou"]
 [ext_resource type="PackedScene" uid="uid://u8an5av5fuxx" path="res://addons/escoria-core/ui_library/menus/main_menu/main_menu.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://gfjgmbcafyyt" path="res://addons/escoria-core/ui_library/menus/pause_menu/pause_menu.tscn" id="8"]
-[ext_resource type="FontFile" path="res://addons/escoria-ui-simplemouse/fonts/caslonantique.tres" id="8_c4xbd"]
 [ext_resource type="Theme" uid="uid://cujvdn6gu1j74" path="res://addons/escoria-ui-simplemouse/theme.tres" id="9"]
 
 [node name="game" type="Node2D"]
@@ -33,8 +33,10 @@ script = ExtResource("2")
 [node name="tooltip" parent="ui" instance=ExtResource("6")]
 offset_right = 1.0
 mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("8_c4xbd")
-theme_override_font_sizes/normal_font_size = 21
+theme_override_constants/outline_size = 6
+theme_override_fonts/normal_font = ExtResource("6_k6xou")
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
 text = "[center][color=#000000][/color][/center]"
 fit_content = true
 

@@ -5,6 +5,8 @@ extends ESCDialogOptionsChooser
 
 @export var color_normal = Color(1.0,1.0,1.0,1.0) # (Color, RGB)
 @export var color_hover = Color(165.0,42.0,42.0, 1.0) # (Color, RGB)
+@export var font_size = 12
+@export var outline_size = 5
 
 
 var _no_more_options: bool = false
@@ -39,6 +41,9 @@ func show_chooser():
 			_option_node.flat = true
 			_option_node.add_theme_color_override("font_color", color_normal)
 			_option_node.add_theme_color_override("font_color_hover", color_hover)
+			_option_node.add_theme_color_override("font_color_hover", color_hover)
+			_option_node.add_theme_font_size_override("font_size", font_size)
+			_option_node.add_theme_constant_override("outline_size", outline_size)
 			_vbox.add_child(_option_node)
 
 			_option_node.pressed.connect(_on_answer_selected.bind(option))
