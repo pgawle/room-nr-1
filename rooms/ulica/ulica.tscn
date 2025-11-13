@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b6axt88ea7bf8"]
+[gd_scene load_steps=12 format=3 uid="uid://b6axt88ea7bf8"]
 
 [ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_57cs5"]
 [ext_resource type="PackedScene" uid="uid://c5pfe15bv4wr2" path="res://characters/dziadek/Dziadek.scn" id="2_mjav8"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="7_el5fg"]
 [ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="8_1sh1p"]
 [ext_resource type="Texture2D" uid="uid://cpytg42jd8qu1" path="res://rooms/ulica/drzewo.png" id="8_47dp5"]
+[ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="10_1sh1p"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_el5fg"]
 vertices = PackedVector2Array(627.2578, 292.96094, 627.71094, 308.97656, 8.2734375, 308.0078, 8.7265625, 291.03125)
@@ -68,9 +69,26 @@ script = ExtResource("8_1sh1p")
 metadata/_custom_type_script = "uid://chu4bvqgwxuts"
 
 [node name="ESCTerrain" type="Node2D" parent="."]
-visible = false
 script = ExtResource("4_mjav8")
 metadata/_custom_type_script = "uid://5pbcieq7gpdo"
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="ESCTerrain"]
 navigation_polygon = SubResource("NavigationPolygon_el5fg")
+
+[node name="ESCExit" type="Area2D" parent="."]
+script = ExtResource("10_1sh1p")
+target_scene = "uid://cjgog8h18qg5h"
+global_id = "exit_to_ulica2"
+tooltip_name = "Exit"
+metadata/_custom_type_script = "uid://btt4cprco53ec"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ESCExit"]
+position = Vector2(-722.8734, -3.0517578e-05)
+scale = Vector2(2.1105752, 1.0000001)
+polygon = PackedVector2Array(639.1023, 3.0517574e-05, 639.1023, 322, 648.1046, 320, 648.57837, -0.99996936)
+
+[node name="ESCLocation" type="Marker2D" parent="ESCExit"]
+position = Vector2(617, 303)
+script = ExtResource("5_uik87")
+global_id = "ulica_exit"
+metadata/_custom_type_script = "uid://beh3ds4eapldu"

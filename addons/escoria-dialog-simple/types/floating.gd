@@ -160,15 +160,19 @@ func say(character: String, line: String) :
 	if _current_character.is_inside_tree() and \
 			is_instance_valid(dialog_location_node):
 		position = dialog_location_node.get_global_transform_with_canvas().origin
-
+		escoria.logger.trace(self, "position: %s" % [position])
 		position.x -= size.x / 2
 	else:
 		position.x = 0
 		size.x = ProjectSettings.get_setting("display/window/size/viewport_width")
 
 	_account_for_margin_x()
+	
+	escoria.logger.trace(self, "position: %s" % [position])
 
 	_account_for_margin_y()
+	
+	escoria.logger.trace(self, "position: %s" % [position])
 
 	_current_character.start_talking()
 
