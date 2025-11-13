@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlhry43id8m0y"
-path="res://.godot/imported/ulica-background.png-0ba9667ace4404f3c64447ba3ad22a9a.ctex"
+uid="uid://7twgrqerto8b"
+path="res://.godot/imported/used_can.png-8305440b6b133f6861a5aef92c9fd1a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://rooms/ulica/ulica-background.png"
-dest_files=["res://.godot/imported/ulica-background.png-0ba9667ace4404f3c64447ba3ad22a9a.ctex"]
+source_file="res://rooms/street_2/used_can.png"
+dest_files=["res://.godot/imported/used_can.png-8305440b6b133f6861a5aef92c9fd1a8.ctex"]
 
 [params]
 

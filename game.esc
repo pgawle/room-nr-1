@@ -1,3 +1,3 @@
 :init
 # Play Escoria logo cutscene
-	change_scene("res://rooms/ulica/ulica.tscn", false)
+	change_scene("res://rooms/street/street.tscn", false)

@@ -1,0 +1,94 @@
+[gd_scene load_steps=12 format=3 uid="uid://b6axt88ea7bf8"]
+
+[ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_m1cn3"]
+[ext_resource type="PackedScene" uid="uid://c5pfe15bv4wr2" path="res://characters/dziadek/Dziadek.scn" id="2_vfu4k"]
+[ext_resource type="Texture2D" uid="uid://dlhry43id8m0y" path="res://rooms/street/street-background.png" id="3_g5qpt"]
+[ext_resource type="Script" uid="uid://fnwnfflaoeqp" path="res://addons/escoria-core/game/core-scripts/esc_background.gd" id="4_u7bji"]
+[ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="5_5isr1"]
+[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="6_q55rf"]
+[ext_resource type="Texture2D" uid="uid://cpytg42jd8qu1" path="res://rooms/street/tree.png" id="7_4e86n"]
+[ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="8_jyh27"]
+[ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="9_qfw4q"]
+[ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="10_erpsj"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_el5fg"]
+vertices = PackedVector2Array(639, 310.95313, 4, 308.03906, 4, 227.97656, 639, 227.00781)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(649, 217, 649, 321, -6, 318, -6, 218)])
+
+[node name="Street" type="Node2D"]
+script = ExtResource("1_m1cn3")
+global_id = "street"
+esc_script = "res://rooms/street/street.esc"
+player_scene = ExtResource("2_vfu4k")
+camera_limits = []
+metadata/_custom_type_script = "uid://c7fcpp72w3dnj"
+
+[node name="escbackground" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("3_g5qpt")
+stretch_mode = 2
+script = ExtResource("4_u7bji")
+metadata/_custom_type_script = "uid://fnwnfflaoeqp"
+
+[node name="StartPos" type="Marker2D" parent="."]
+position = Vector2(56, 252)
+script = ExtResource("5_5isr1")
+global_id = "ulica_start"
+is_start_location = true
+metadata/_custom_type_script = "uid://beh3ds4eapldu"
+
+[node name="Tree" type="Area2D" parent="."]
+process_mode = 1
+script = ExtResource("6_q55rf")
+global_id = "drzewo"
+esc_script = "res://rooms/street/tree.esc"
+tooltip_name = "Tree"
+default_action = "look"
+combine_when_selected_action_is_in = PackedStringArray()
+hover_enabled = true
+inventory_texture = ExtResource("7_4e86n")
+inventory_texture_hovered = ExtResource("7_4e86n")
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="Sprite2D" type="Sprite2D" parent="Tree"]
+position = Vector2(312, 91)
+texture = ExtResource("7_4e86n")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tree"]
+position = Vector2(6.0000005, -42.000008)
+scale = Vector2(0.49092582, 0.49092588)
+polygon = PackedVector2Array(594, 530, 646, 513, 642, 461, 608, 348, 591, 263, 564, 265, 555, 279, 525, 274, 500, 270, 469, 274, 410, 242, 391, 217, 341, 205, 307, 180, 293, 119, 321, 96, 313, 79, 290, 77, 275, 49, 282, 20, 302, 4, 343, -3, 690, 1, 706, 20, 732, 10, 768, 13, 787, 29, 789, 49, 789, 66, 828, 73, 851, 86, 865, 111, 922, 130, 952, 144, 977, 178, 979, 213, 959, 240, 931, 252, 779, 304, 738, 313, 667, 300, 633, 277, 653, 375, 669, 424, 697, 470, 722, 495, 750, 518, 793, 525, 704, 538, 662, 545)
+
+[node name="ESCInteractionLocation" type="Marker2D" parent="Tree"]
+position = Vector2(319, 261)
+script = ExtResource("8_jyh27")
+metadata/_custom_type_script = "uid://chu4bvqgwxuts"
+
+[node name="ESCTerrain" type="Node2D" parent="."]
+script = ExtResource("9_qfw4q")
+metadata/_custom_type_script = "uid://5pbcieq7gpdo"
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="ESCTerrain"]
+position = Vector2(-1, 4)
+navigation_polygon = SubResource("NavigationPolygon_el5fg")
+
+[node name="ESCExit" type="Area2D" parent="."]
+script = ExtResource("10_erpsj")
+target_scene = "uid://cjgog8h18qg5h"
+global_id = "exit_to_street_2"
+tooltip_name = "Exit"
+metadata/_custom_type_script = "uid://btt4cprco53ec"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ESCExit"]
+position = Vector2(-722.8734, -3.0517578e-05)
+scale = Vector2(2.1105752, 1.0000001)
+polygon = PackedVector2Array(639.1023, 3.0517574e-05, 639.1023, 322, 648.1046, 320, 648.57837, -0.99996936)
+
+[node name="ESCLocation" type="Marker2D" parent="ESCExit"]
+position = Vector2(636, 270)
+script = ExtResource("5_5isr1")
+global_id = "ulica_exit"
+metadata/_custom_type_script = "uid://beh3ds4eapldu"

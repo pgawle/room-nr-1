@@ -1,0 +1,23 @@
+:look
+	if tries_trashcans < 1:
+		say("dziadek", "Looks gross. I see some used can, how appropriate.")
+	else:
+		say("dziadek", "Looks gross and empty.")
+
+:pickup
+
+	if tries_trashcans < 1:
+		tries_trashcans = tries_trashcans + 1
+		say("dziadek", "Do I really look like that much of a bum?")
+	else:
+		if tries_trashcans < 2:
+			inventory_add("used_can")
+			set_active("used_can", false)
+			say("dziadek", "Ok. If you insist.")
+			tries_trashcans = tries_trashcans + 1
+		else:
+			say("dziadek", "It's empty and still gross.")
+
+
+:use
+	say("dziadek", "What for?")
