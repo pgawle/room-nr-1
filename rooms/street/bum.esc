@@ -1,0 +1,43 @@
+:talk
+	turn_to("bum", "dziadek")
+
+	say("dziadek", "Hello.")
+	say("bum", "Yeah?")
+
+	say("dziadek", "I noticed the stick you're holding.")
+	say("bum", "Good. It means you're paying attention.")
+
+	say("dziadek", "Could I borrow it?")
+	say("bum", "No.")
+
+
+	?!
+		- "Why not?"
+			say("dziadek", "Why not?")
+			say("bum", "Because it's mine. Simple as that.")
+
+		- "I’d return it."
+			say("dziadek", "I'd return it.")
+			say("bum", "That's what people say before disappearing with things.")
+
+		- "I could trade you something."
+			say("dziadek", "Maybe I could trade you something for it.")
+			say("bum", "Unless it's a better version of this stick, the answer is still no.")
+
+		- "What’s in your cart?"
+			say("dziadek", "What’s in your cart, anyway?")
+			say("bum", "Cans.")
+			say("dziadek", "Just cans?")
+			say("bum", "Not 'just'. Good ones.")
+
+			say("bum", "This tall silver one used to hold imported peaches. You can’t get those anymore.")
+			say("bum", "And that green one survived a winter outside without a single dent. Tough thing.")
+			say("dziadek", "So you collect them?")
+			say("bum", "I keep the ones worth keeping.")
+
+			say("dziadek", "So, about the stick.")
+			say("bum", "Still no.")
+
+		- "Never mind."
+			say("dziadek", "Alright, never mind.")
+			done

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b6axt88ea7bf8"]
+[gd_scene load_steps=15 format=3 uid="uid://b6axt88ea7bf8"]
 
 [ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_m1cn3"]
 [ext_resource type="PackedScene" uid="uid://c5pfe15bv4wr2" path="res://characters/dziadek/Dziadek.scn" id="2_vfu4k"]
@@ -10,11 +10,16 @@
 [ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="8_jyh27"]
 [ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="9_qfw4q"]
 [ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="10_erpsj"]
+[ext_resource type="PackedScene" uid="uid://vu74r1cdo3qw" path="res://characters/bum/Bum.scn" id="11_vfu4k"]
+[ext_resource type="Texture2D" uid="uid://dlelkdfb24f6s" path="res://rooms/street/apple.png" id="12_g5qpt"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_el5fg"]
 vertices = PackedVector2Array(639, 310.95313, 4, 308.03906, 4, 227.97656, 639, 227.00781)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(649, 217, 649, 321, -6, 318, -6, 218)])
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g5qpt"]
+radius = 12.0415945
 
 [node name="Street" type="Node2D"]
 script = ExtResource("1_m1cn3")
@@ -54,17 +59,18 @@ inventory_texture_hovered = ExtResource("7_4e86n")
 metadata/_custom_type_script = "uid://dshelmw7y44qg"
 
 [node name="Sprite2D" type="Sprite2D" parent="Tree"]
-position = Vector2(312, 91)
+position = Vector2(302, 91)
 texture = ExtResource("7_4e86n")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tree"]
 position = Vector2(6.0000005, -42.000008)
 scale = Vector2(0.49092582, 0.49092588)
-polygon = PackedVector2Array(594, 530, 646, 513, 642, 461, 608, 348, 591, 263, 564, 265, 555, 279, 525, 274, 500, 270, 469, 274, 410, 242, 391, 217, 341, 205, 307, 180, 293, 119, 321, 96, 313, 79, 290, 77, 275, 49, 282, 20, 302, 4, 343, -3, 690, 1, 706, 20, 732, 10, 768, 13, 787, 29, 789, 49, 789, 66, 828, 73, 851, 86, 865, 111, 922, 130, 952, 144, 977, 178, 979, 213, 959, 240, 931, 252, 779, 304, 738, 313, 667, 300, 633, 277, 653, 375, 669, 424, 697, 470, 722, 495, 750, 518, 793, 525, 704, 538, 662, 545)
+polygon = PackedVector2Array(594, 530, 646, 513, 642, 461, 608, 348, 596.83154, 315.72998, 592.7576, 256.65793, 584.60974, 238.32523, 584.60974, 211.84464, 523.50073, 236.28824, 472.57654, 236.28824, 415.5414, 217.95554, 397.2087, 195.54889, 382.94995, 181.29013, 348.3215, 162.95741, 321.8409, 128.32896, 321, 96, 313, 79, 290, 77, 275, 49, 282, 20, 302, 4, 343, -3, 617.20123, -8.147858, 778.1217, -8.147858, 861.6374, 57.035103, 888.1179, 83.515686, 910.5246, 122.21806, 898.3028, 181.29013, 873.8592, 201.65979, 784.2326, 232.21432, 741.45624, 254.62094, 674.2363, 260.73184, 627.38605, 236.28824, 653, 375, 669, 424, 697, 470, 722, 495, 750, 518, 793, 525, 704, 538, 662, 545)
 
 [node name="ESCInteractionLocation" type="Marker2D" parent="Tree"]
 position = Vector2(319, 261)
 script = ExtResource("8_jyh27")
+global_id = "tree_loc"
 metadata/_custom_type_script = "uid://chu4bvqgwxuts"
 
 [node name="ESCTerrain" type="Node2D" parent="."]
@@ -92,3 +98,38 @@ position = Vector2(636, 270)
 script = ExtResource("5_5isr1")
 global_id = "ulica_exit"
 metadata/_custom_type_script = "uid://beh3ds4eapldu"
+
+[node name="Bum" parent="." instance=ExtResource("11_vfu4k")]
+position = Vector2(402, 229)
+
+[node name="ESCInteractionLocation" type="Marker2D" parent="Bum"]
+position = Vector2(36, 10)
+script = ExtResource("8_jyh27")
+metadata/_custom_type_script = "uid://chu4bvqgwxuts"
+
+[node name="Apple" type="Area2D" parent="."]
+process_mode = 1
+script = ExtResource("6_q55rf")
+global_id = "apple"
+esc_script = "res://rooms/street/apple.esc"
+tooltip_name = "Apple"
+default_action = "look"
+combine_when_selected_action_is_in = PackedStringArray()
+hover_enabled = true
+inventory_texture = ExtResource("12_g5qpt")
+inventory_texture_hovered = ExtResource("12_g5qpt")
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="Sprite2D" type="Sprite2D" parent="Apple"]
+position = Vector2(225, 76)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("12_g5qpt")
+
+[node name="ESCInteractionLocation" type="Marker2D" parent="Apple"]
+position = Vector2(182, 262)
+script = ExtResource("8_jyh27")
+metadata/_custom_type_script = "uid://chu4bvqgwxuts"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Apple"]
+position = Vector2(225, 75)
+shape = SubResource("CircleShape2D_g5qpt")
