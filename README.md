@@ -23,3 +23,12 @@ I copy it from simple project. I restarted GODOT. It worked...
 To get plugin to work. Copied from example project. Restart GODOT. 
 
 In order to menu to work klick to "play" but "movie play"
+
+## Escoria tips
+
+Esc script needs to consists real TAB signs, not just spaces.
+
+ESCInteractionLocation is needed for interaction to work. Player needs to know where to move to start interaction.
+It might be not needed when TK (telekinesis) option is used. ex. :pickup | TK
+
+In order to use item with something you need to set "Combine when selected action is in" on ESCItem.
