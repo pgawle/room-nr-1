@@ -18,6 +18,8 @@
 		else:
 			say("dziadek", "It's empty and still gross.")
 
-
 :use
 	say("dziadek", "What for?")
+
+:use "used_can"
+	say("dziadek", "I don't want to throw it away. I just got it!")

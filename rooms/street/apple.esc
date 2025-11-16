@@ -1,2 +1,10 @@
 :look
-	say("dziadek", "I am so hungry!")
+	say("dziadek", "Looks delicious! I am so hungry!")
+
+:use "used_can"
+	say("dziadek", "Can is too light.")
+
+:use "stick"
+	say("dziadek", "Uuuu it's mine!")
+	inventory_add("apple")
+	set_active("apple", false)

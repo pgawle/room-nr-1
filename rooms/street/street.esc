@@ -1,0 +1,5 @@
+:setup
+	global bum_dialog_why_not_done = false
+	global bum_dialog_return_it_done = false
+	global bum_initial_dialog_done = false
+	global bum_received_can = false

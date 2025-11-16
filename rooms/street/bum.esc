@@ -1,36 +1,49 @@
 :talk
-	turn_to("bum", "dziadek")
+	if bum_received_can:
+		say("dziadek", "Hello again!")
+		say("bum", "Later.")
+		say("dziadek", "You're busy?")
+		say("bum", "This can is a masterpiece.")
+		say("dziadek", "Right.")
+		say("bum", "Come back when I'm done admiring it.")
+		stop
 
-	say("dziadek", "Hello.")
-	say("bum", "Yeah?")
+	if !bum_initial_dialog_done:
+		say("dziadek", "Hello.")
+		say("bum", "Yeah?")
 
-	say("dziadek", "I noticed the stick you're holding.")
-	say("bum", "Good. It means you're paying attention.")
+		say("dziadek", "I noticed the stick you're holding.")
+		say("bum", "Good. It means you're paying attention.")
 
-	say("dziadek", "Could I borrow it?")
-	say("bum", "No.")
-
+		say("dziadek", "Could I borrow it?")
+		say("bum", "No.")
+		bum_initial_dialog_done = true
+	else:
+		say("dziadek", "Hello again.")
+		say("bum", "Yeah? What is it this time?")	
 
 	?!
-		- "Why not?"
+		- "Why not?" [!bum_dialog_why_not_done]
 			say("dziadek", "Why not?")
 			say("bum", "Because it's mine. Simple as that.")
+			bum_dialog_why_not_done = true
 
-		- "I’d return it."
+		- "I'd return it." [!bum_dialog_return_it_done]
 			say("dziadek", "I'd return it.")
 			say("bum", "That's what people say before disappearing with things.")
+			bum_dialog_return_it_done = true
 
 		- "I could trade you something."
 			say("dziadek", "Maybe I could trade you something for it.")
 			say("bum", "Unless it's a better version of this stick, the answer is still no.")
 
-		- "What’s in your cart?"
-			say("dziadek", "What’s in your cart, anyway?")
+		- "What's in your cart?"
+			say("dziadek", "What's in your cart, anyway?")
 			say("bum", "Cans.")
 			say("dziadek", "Just cans?")
 			say("bum", "Not 'just'. Good ones.")
 
-			say("bum", "This tall silver one used to hold imported peaches. You can’t get those anymore.")
+			say("bum", "This tall silver one used to hold imported peaches. You can't get those anymore.")
 			say("bum", "And that green one survived a winter outside without a single dent. Tough thing.")
 			say("dziadek", "So you collect them?")
 			say("bum", "I keep the ones worth keeping.")
@@ -41,3 +54,42 @@
 		- "Never mind."
 			say("dziadek", "Alright, never mind.")
 			done
+
+:use "used_can"
+	say("dziadek", "I've got something for you.")
+	say("bum", "If it's another question about the stick, I swear...")
+
+	inventory_remove("used_can")
+	say("dziadek", "Relax. It's a can. Thought it might interest you.")
+
+	say("bum", "Let me look at it.")
+
+	say("bum", "Huh. It's used. Dented. Scratched up.")
+	say("bum", "Most people would walk right past it.")
+
+	say("dziadek", "So... it's worthless?")
+	say("bum", "Worthless? No.")
+	say("bum", "See that faint ring around the top? Production style they stopped using years ago.")
+	say("bum", "The slight bend on the left, that's old machinery, not cheap modern stamping.")
+
+	say("dziadek", "You really see all that?")
+	say("bum", "Some folks read books. I read metal.")
+	say("bum", "This one's is real vintage quality.")
+
+	say("dziadek", "Glad it's in good hands then.")
+	say("bum", "It'll go well with the rest of the collection.")
+
+	say("dziadek", "So.. about the stick...")
+	say("bum", "...")
+
+	say("bum", "Alright.")
+	say("bum", "You didn't have to, but you gave me something that actually means something to me.")
+	say("bum", "I can give something back.")
+
+	inventory_add("stick")
+	set_active("stick", false)
+	bum_received_can = true
+
+	say("dziadek", "Are you sure?")
+	say("bum", "Yeah. Just don't tell anyone I was nice today.")
+	say("bum", "...and don't snap it in half. It's still a good stick.")

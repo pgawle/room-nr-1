@@ -1,0 +1,2 @@
+:pickup | TK
+	say($current_player, "I can't take this!")
