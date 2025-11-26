@@ -281,14 +281,7 @@ func left_click_on_item(item_global_id: String, event: InputEvent) -> void:
 
 func right_click_on_item(item_global_id: String, event: InputEvent) -> void:
 	element_focused(item_global_id)
-	var object = escoria.object_manager.get_object(item_global_id)
-	if object != null:
-		$mouse_layer/verbs_menu.set_by_name("look")
-	escoria.action_manager.do(
-		escoria.action_manager.ACTION.ITEM_RIGHT_CLICK,
-		[item_global_id, event],
-		true
-	)
+	$mouse_layer/verbs_menu.iterate_actions_cursor(1)
 
 func left_double_click_on_item(item_global_id: String, event: InputEvent) -> void:
 	escoria.action_manager.do(
@@ -326,14 +319,7 @@ func left_click_on_inventory_item(inventory_item_global_id: String, event: Input
 
 func right_click_on_inventory_item(inventory_item_global_id: String, event: InputEvent) -> void:
 	element_focused(inventory_item_global_id)
-	var object = escoria.object_manager.get_object(inventory_item_global_id)
-	if object != null:
-		escoria.action_manager.set_current_action("look")
-	escoria.action_manager.do(
-		escoria.action_manager.ACTION.ITEM_RIGHT_CLICK,
-		[inventory_item_global_id, event],
-		true
-	)
+	$mouse_layer/verbs_menu.iterate_actions_cursor(1)
 
 
 func left_double_click_on_inventory_item(inventory_item_global_id: String, event: InputEvent) -> void:

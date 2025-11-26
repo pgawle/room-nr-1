@@ -86,6 +86,7 @@
 	say("bum", "You didn't have to, but you gave me something that actually means something to me.")
 	say("bum", "I can give something back.")
 
+	anim_block("dziadek", "take_up")
 	inventory_add("stick")
 	set_active("stick", false)
 	bum_received_can = true

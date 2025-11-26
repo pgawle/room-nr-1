@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://oyoisth7xoby"]
+
+[ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="1_ga1ym"]
+[ext_resource type="Texture2D" uid="uid://7twgrqerto8b" path="res://rooms/street_2/used_can.png" id="2_rgag1"]
+[ext_resource type="Texture2D" uid="uid://c6nwsc75ce5do" path="res://items/highlight.png" id="3_bei25"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bei25"]
+radius = 22.0
+
+[node name="Highlight" type="Area2D"]
+process_mode = 1
+script = ExtResource("1_ga1ym")
+global_id = "highlight"
+esc_script = "res://rooms/street_2/used_can.esc"
+is_movable = true
+combine_when_selected_action_is_in = PackedStringArray("use")
+default_action_inventory = "use"
+use_from_inventory_only = true
+inventory_texture = ExtResource("2_rgag1")
+inventory_texture_hovered = ExtResource("2_rgag1")
+metadata/_custom_type_script = "uid://dshelmw7y44qg"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(23, 30)
+texture = ExtResource("3_bei25")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(23, 30)
+shape = SubResource("CircleShape2D_bei25")

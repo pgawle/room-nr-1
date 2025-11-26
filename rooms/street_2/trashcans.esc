@@ -11,9 +11,14 @@
 		say("dziadek", "Do I really look like that much of a bum?")
 	else:
 		if tries_trashcans < 2:
-			inventory_add("used_can")
-			set_active("used_can", false)
 			say("dziadek", "Ok. If you insist.")
+			anim_block("dziadek", "take_up")
+			inventory_add("used_can")
+			teleport_pos("highlight", 25, 10)
+			teleport_pos("used_can", 25, 10)
+			wait(2)
+			set_active("highlight", false)
+			set_active("used_can", false)
 			tries_trashcans = tries_trashcans + 1
 		else:
 			say("dziadek", "It's empty and still gross.")
