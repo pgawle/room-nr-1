@@ -28,7 +28,8 @@ enum EDITOR_GAME_DEBUG_DISPLAY {
 @export var pause_menu: NodePath
 
 ## Safe margin around tooltips
-@export var mouse_tooltip_margin: float = 50.0
+@export var mouse_tooltip_margin: float = 0.0
+@export var mouse_tooltip_top_margin: int = 36
 
 ## Debug mode for the editor (None, Mouse Tooltips Limit)
 @export var editor_debug_mode: EDITOR_GAME_DEBUG_DISPLAY = EDITOR_GAME_DEBUG_DISPLAY.NONE:

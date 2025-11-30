@@ -427,11 +427,11 @@ func get_custom_data() -> Dictionary:
 func update_tooltip_following_mouse_position():
 	_current_mouse_pos = get_global_mouse_position()
 	var corrected_position = _current_mouse_pos \
-		+ Vector2(32, -tooltip_node.size.y/2)
+		+ Vector2(-tooltip_node.size.x/2, -mouse_tooltip_top_margin)
 
 	# clamp TOP
-	if tooltip_node.tooltip_distance_to_edge_top(_current_mouse_pos) <= mouse_tooltip_margin:
-		corrected_position.y = mouse_tooltip_margin
+	if tooltip_node.tooltip_distance_to_edge_top(_current_mouse_pos) <= mouse_tooltip_top_margin:
+		corrected_position.y = tooltip_node.size.y/2 - 5
 
 	# clamp BOTTOM
 	if tooltip_node.tooltip_distance_to_edge_bottom(_current_mouse_pos + tooltip_node.size) <= mouse_tooltip_margin:

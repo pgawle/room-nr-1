@@ -8,4 +8,3 @@ text = "[center][color=#ffffff][/color][/center]"
 scroll_active = false
 script = ExtResource("2")
 color = Color(1, 1, 1, 1)
-offset_from_cursor = Vector2(0, 0)

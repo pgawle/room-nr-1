@@ -8,23 +8,23 @@ class_name ESCTooltip
 const MAX_WIDTH = 200
 
 ## Minimum height of the label
-const MIN_HEIGHT = 30
+const MIN_HEIGHT = 12
 
 ## Maximum height of the label
-const MAX_HEIGHT = 500
+const MAX_HEIGHT = 36
 
 ## Height of one line in the label
-const ONE_LINE_HEIGHT = 16
+const ONE_LINE_HEIGHT = 12
 
 
 ## Color of the label
 @export var color: Color: set = set_color
 
 ## Vector2 defining the offset from the cursor
-@export var offset_from_cursor: Vector2 = Vector2(10,0)
+@export var offset_from_cursor: Vector2 = Vector2(0,0)
 
 ## Activates debug mode. If enabled, shows the label with a white background.
-@export var debug_mode: bool = false: set = set_debug_mode
+@export var debug_mode: bool = true: set = set_debug_mode
 
 
 ## Infinitive verb
