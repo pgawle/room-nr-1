@@ -157,10 +157,15 @@ func say(character: String, line: String) :
 	text_node.text = "[center][color=#" + text_color_html + "]" \
 		.format([text_color_html]) + tr(line) + "[/color][center]"
 
+	text_node.size = Vector2(
+		text_node.get_content_width(),
+		text_node.get_content_height()
+	)
+
 	if _current_character.is_inside_tree() and \
 			is_instance_valid(dialog_location_node):
 		position = dialog_location_node.get_global_transform_with_canvas().origin
-		escoria.logger.trace(self, "position: %s" % [position])
+		escoria.logger.trace(self, "position: %s" % [position.x])
 		position.x -= size.x / 2
 	else:
 		position.x = 0
@@ -168,7 +173,7 @@ func say(character: String, line: String) :
 
 	_account_for_margin_x()
 	
-	escoria.logger.trace(self, "position: %s" % [position])
+	escoria.logger.trace(self, "position: %s" % [position.x])
 
 	_account_for_margin_y()
 	
@@ -277,7 +282,7 @@ func _account_for_margin_x() -> void:
 			ProjectSettings.get("display/window/size/viewport_width")
 
 	if screen_margin_x > 0:
-		position.x -= screen_margin_x
+		position.x = ProjectSettings.get("display/window/size/viewport_width") - size.x
 
 
 func _account_for_margin_y() -> void:

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cytpwmod6bdw6" path="res://addons/escoria-ui-simplemouse/tooltip/tooltip_target.gd" id="2"]
 
 [node name="tooltip" type="RichTextLabel"]
+offset_right = 1.0
 bbcode_enabled = true
 text = "[center][color=#ffffff][/color][/center]"
 scroll_active = false
