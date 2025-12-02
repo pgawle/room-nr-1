@@ -22,9 +22,6 @@ In order to use it correctly disable embeded mode.
 
 ![Screenshot](./README_IMG/embeded.png)
 
-
-https://www.reddit.com/r/godot/comments/1jj7hip/how_do_i_reenable_embed_game_on_next_play/
-
 ## Comments and other wierd stuff
 
 When defining start script it was not reading init. 
