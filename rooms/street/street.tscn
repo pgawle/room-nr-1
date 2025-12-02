@@ -98,12 +98,12 @@ tooltip_name = "Exit"
 metadata/_custom_type_script = "uid://btt4cprco53ec"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ESCExit"]
-position = Vector2(-722.8734, -3.0517578e-05)
-scale = Vector2(2.1105752, 1.0000001)
-polygon = PackedVector2Array(639.1023, 3.0517574e-05, 639.1023, 322, 648.1046, 320, 648.57837, -0.99996936)
+position = Vector2(-1647.7609, -2)
+scale = Vector2(3.5437748, 1.0000001)
+polygon = PackedVector2Array(639.1023, 3.0517574e-05, 639.1023, 215.91583, 639.1023, 322, 648.1046, 320, 648.57837, -0.99996936)
 
 [node name="ESCLocation" type="Marker2D" parent="ESCExit"]
-position = Vector2(636, 270)
+position = Vector2(598, 265)
 script = ExtResource("5_5isr1")
 global_id = "ulica_exit"
 metadata/_custom_type_script = "uid://beh3ds4eapldu"

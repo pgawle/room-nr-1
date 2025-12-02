@@ -3,3 +3,6 @@
 	global bum_dialog_return_it_done = false
 	global bum_initial_dialog_done = false
 	global bum_received_can = false
+
+	if ESC_LAST_SCENE == "ulica2":
+		teleport("dziadek", "exit_to_street_2")
