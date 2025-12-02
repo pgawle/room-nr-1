@@ -3,9 +3,6 @@ class_name ElementHighlighter
 
 var _parent_node: Node2D
 var _shader_material: ShaderMaterial
-var _is_greyscale: bool = false
-
-
 
 func _ready() -> void:
 	_parent_node = get_parent()

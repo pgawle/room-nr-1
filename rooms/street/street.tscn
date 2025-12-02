@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b6axt88ea7bf8"]
+[gd_scene load_steps=18 format=3 uid="uid://b6axt88ea7bf8"]
 
 [ext_resource type="Script" uid="uid://c7fcpp72w3dnj" path="res://addons/escoria-core/game/core-scripts/esc_room.gd" id="1_m1cn3"]
 [ext_resource type="PackedScene" uid="uid://c5pfe15bv4wr2" path="res://characters/dziadek/Dziadek.scn" id="2_vfu4k"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://beh3ds4eapldu" path="res://addons/escoria-core/game/core-scripts/esc_location.gd" id="5_5isr1"]
 [ext_resource type="Script" uid="uid://dshelmw7y44qg" path="res://addons/escoria-core/game/core-scripts/esc_item.gd" id="6_q55rf"]
 [ext_resource type="Texture2D" uid="uid://cpytg42jd8qu1" path="res://rooms/street/tree.png" id="7_4e86n"]
+[ext_resource type="Script" uid="uid://f87k8t71uuug" path="res://components/element_highlighter/element_highlighter.gd" id="8_5isr1"]
 [ext_resource type="Script" uid="uid://chu4bvqgwxuts" path="res://addons/escoria-core/game/core-scripts/esc_interaction_location.gd" id="8_jyh27"]
 [ext_resource type="Script" uid="uid://5pbcieq7gpdo" path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" id="9_qfw4q"]
 [ext_resource type="Script" uid="uid://btt4cprco53ec" path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" id="10_erpsj"]
@@ -65,6 +66,10 @@ metadata/_custom_type_script = "uid://dshelmw7y44qg"
 [node name="Sprite2D" type="Sprite2D" parent="Tree"]
 position = Vector2(302, 91)
 texture = ExtResource("7_4e86n")
+
+[node name="ElementHighlighter" type="Node2D" parent="Tree/Sprite2D"]
+script = ExtResource("8_5isr1")
+metadata/_custom_type_script = "uid://f87k8t71uuug"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tree"]
 position = Vector2(6.0000005, -42.000008)
