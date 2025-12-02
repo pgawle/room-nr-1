@@ -17,7 +17,7 @@
 
 ## Cursor specific  
 
-When working on mac curor will NOT refresh when in embeded mode. In is known [bug](https://github.com/godotengine/godot/issues/110800) 
+When working on MAC curor will NOT refresh when in embeded mode. In is known [bug](https://github.com/godotengine/godot/issues/110800) 
 In order to use it correctly disable embeded mode. 
 
 ![Screenshot](./README_IMG/embeded.png)
