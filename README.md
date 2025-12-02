@@ -22,6 +22,10 @@ In order to use it correctly disable embeded mode.
 
 ![Screenshot](./README_IMG/embeded.png)
 
+## Highlight of elements
+
+[Shaders intro](https://www.youtube.com/watch?v=GCZT1_bd_7w)
+
 ## Comments and other wierd stuff
 
 When defining start script it was not reading init. 
