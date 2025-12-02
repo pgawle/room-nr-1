@@ -15,6 +15,16 @@
 [Escoria Doc - Step by Step](https://docs.escoria-framework.org/en/devel/getting_started/step_by_step/index.html)
 
 
+## Cursor specific  
+
+When working on mac curor will NOT refresh when in embeded mode. In is known [bug](https://github.com/godotengine/godot/issues/110800) 
+In order to use it correctly disable embeded mode. 
+
+![Screenshot](./README_IMG/embeded.png)
+
+
+https://www.reddit.com/r/godot/comments/1jj7hip/how_do_i_reenable_embed_game_on_next_play/
+
 ## Comments and other wierd stuff
 
 When defining start script it was not reading init. 
